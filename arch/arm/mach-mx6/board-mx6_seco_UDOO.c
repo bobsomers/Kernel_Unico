@@ -239,6 +239,7 @@ static struct ahci_platform_data mx6q_seco_UDOO_sata_data = {
 static inline void mx6q_seco_UDOO_init_uart(void) {
 	imx6q_add_imx_uart(0, NULL);
 	imx6q_add_imx_uart(1, NULL);
+  imx6q_add_imx_uart(2, NULL);
     imx6q_add_imx_uart(3, NULL);
 }
 
@@ -322,7 +323,7 @@ static void __init imx6q_seco_UDOO_init_usb(void) {
  *                               GPU - IPU                             *
  ***********************************************************************/
 
-static unsigned long gpu_reserved_mem = SZ_128M;
+static unsigned long gpu_reserved_mem = SZ_1M;
 static int __init early_gpu_res_mem(char *arg)
 {
 	int gpu_reserved_memory_selector = 128;
